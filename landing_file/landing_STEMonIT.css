@@ -1,104 +1,97 @@
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
     background-color: gold;
-    color: blue;
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
 /* Header styles */
 header {
     background-color: blue;
-    color: white;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: right; /* Align header content to the right */
 }
 
 .logo h1 {
-    font-size: 1.5em;
-    margin: 0;
+    margin: 0; /* Remove default margin */
+    font-size: 24px;
+    font-weight: bold;
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex;
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
 }
 
 nav ul li {
-    margin-right: 20px;
+    display: inline-block; /* Display navigation items inline */
+    margin-right: 20px; /* Add spacing between navigation items */
 }
 
 nav ul li a {
+    text-decoration: none; /* Remove underline from links */
     color: white;
-    font-size: 1.1em;
 }
 
-/* Main styles */
+/* Main content styles */
 main {
     padding: 20px;
 }
 
 /* Introduction section styles */
 #intro {
-    padding: 50px;
+    padding: 50px 0;
     text-align: center;
 }
 
 .intro-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 800px; /* Set maximum width for content */
+    margin: 0 auto; /* Center align content */
 }
 
 .intro-content h1 {
-    font-size: 2.5em;
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
 .intro-content p {
-    font-size: 1.1em;
+    font-size: 18px;
+    margin-bottom: 30px;
 }
 
 /* Features section styles */
 #features {
-    background-color: gold;
-    padding: 50px 20px;
+    background-color: white;
+    padding: 50px 0;
     text-align: center;
 }
 
 .feature {
-    margin-bottom: 40px;
+    max-width: 300px;
+    margin: 0 auto 30px; /* Center align feature items */
 }
 
 .feature img {
-    width: 200px;
+    width: 100%;
+    height: auto;
     margin-bottom: 20px;
 }
 
 .feature h2 {
-    font-size: 1.8em;
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
 .feature p {
-    font-size: 1.1em;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 /* About section styles */
 #about {
-    padding: 50px;
+    padding: 50px 0;
     text-align: center;
+    background-color: white;
 }
 
 .about-content {
@@ -107,23 +100,23 @@ main {
 }
 
 .about-content h2 {
-    font-size: 2.5em;
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
 .about-content p {
-    font-size: 1.1em;
+    font-size: 18px;
+    line-height: 1.5;
     margin-bottom: 20px;
 }
 
 .about-content a {
-    color: blue;
+    color: blue; /* Change link color */
 }
 
 /* App section styles */
 #app {
-    background-color: gold;
-    padding: 50px;
+    padding: 50px 0;
     text-align: center;
 }
 
@@ -133,66 +126,57 @@ main {
 }
 
 .app-content h2 {
-    font-size: 2.5em;
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
 .app-content p {
-    font-size: 1.1em;
+    font-size: 18px;
+    line-height: 1.5;
     margin-bottom: 20px;
 }
 
 .app-content .btn {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: blue;
     color: white;
-    padding: 10px 20px;
-    border: none;
+    text-decoration: none;
+    font-size: 16px;
     border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
 .app-content .btn:hover {
-    background-color: #003366;
+    background-color: darkblue;
 }
 
 /* Footer styles */
 footer {
-    background-color: blue;
-    color: white;
-    padding: 20px 0;
+    background-color: gold;
+    padding: 20px;
     text-align: center;
 }
 
 .footer-content {
     max-width: 800px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .footer-content p {
     margin: 0;
 }
 
-.footer-content nav ul {
-    list-style-type: none;
-    display: flex;
+.social-media {
+    margin-top: 20px;
 }
 
-.footer-content nav ul li {
-    margin-right: 20px;
-}
-
-.footer-content nav ul li a {
-    color: white;
-    font-size: 1.1em;
+.social-media a {
+    display: inline-block;
+    margin-right: 10px;
 }
 
 .social-media img {
     width: 30px;
-    margin-left: 10px;
+    height: 30px;
 }
 
