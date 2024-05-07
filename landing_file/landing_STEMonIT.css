@@ -1,13 +1,19 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styles */
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: gold;
+    color: blue;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Header styles */
@@ -22,20 +28,20 @@ header {
 
 .logo h1 {
     font-size: 1.5em;
+    margin: 0;
 }
 
 nav ul {
     list-style-type: none;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
 
 nav ul li a {
     color: white;
-    text-decoration: none;
     font-size: 1.1em;
 }
 
@@ -44,16 +50,14 @@ main {
     padding: 20px;
 }
 
-/* Intro section styles */
+/* Introduction section styles */
 #intro {
-    background-color: gold;
-    color: white;
     padding: 50px;
     text-align: center;
 }
 
 .intro-content {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -63,34 +67,18 @@ main {
 }
 
 .intro-content p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    text-decoration: none;
     font-size: 1.1em;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    background-color: navy;
 }
 
 /* Features section styles */
 #features {
-    background-color: white;
-    color: blue;
-    padding: 50px;
+    background-color: gold;
+    padding: 50px 20px;
     text-align: center;
 }
 
 .feature {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .feature img {
@@ -109,8 +97,6 @@ main {
 
 /* About section styles */
 #about {
-    background-color: blue;
-    color: white;
     padding: 50px;
     text-align: center;
 }
@@ -126,30 +112,23 @@ main {
 }
 
 .about-content p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 20px;
 }
 
 .about-content a {
-    color: gold;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.about-content a:hover {
-    text-decoration: underline;
+    color: blue;
 }
 
 /* App section styles */
 #app {
     background-color: gold;
-    color: blue;
     padding: 50px;
     text-align: center;
 }
 
 .app-content {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -159,28 +138,36 @@ main {
 }
 
 .app-content p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 20px;
 }
 
 .app-content .btn {
     background-color: blue;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .app-content .btn:hover {
-    background-color: navy;
+    background-color: #003366;
 }
 
 /* Footer styles */
 footer {
-    background-color: gold;
-    color: blue;
-    text-align: center;
+    background-color: blue;
+    color: white;
     padding: 20px 0;
+    text-align: center;
 }
 
 .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -191,16 +178,17 @@ footer {
 }
 
 .footer-content nav ul {
+    list-style-type: none;
     display: flex;
 }
 
 .footer-content nav ul li {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .footer-content nav ul li a {
-    color: blue;
-    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
 }
 
 .social-media img {
