@@ -11,6 +11,17 @@ const timeText = document.querySelector(".timer .time_left_txt");
 const timeCounter = document.querySelector(".timer .timer_sec");
 const nextButton = document.querySelector("footer .next_btn");
 const questionCounter = document.querySelector("footer .total_que");
+const restartButton = document.querySelector(".buttons .restart"); // Declare restartButton
+const quitButton = document.querySelector(".buttons .quit"); // Declare quitButton
+
+let currentQuestion = 0;
+let currentQuestionNumber = 1;
+let timeValue = 30;
+let counterLine;
+let counter;
+let score = 0;
+let counterTime;
+let widthValue = 0;
 
 // Function to handle start button click
 startButton.onclick = () => {
@@ -26,10 +37,10 @@ exitButton.onclick = () => {
 continueButton.onclick = () => {
     infoBox.classList.remove("activeInfo"); // Hide info box
     quizBox.classList.add("activeQuiz"); // Display quiz box
-    showQuestions(0); // Display first question
-    updateQuestionCounter(1); // Update question counter
-    startTimer(30); // Start timer
-    startTimerLine(0); // Start timer line animation
+    showQuestions(currentQuestion); // Display first question
+    updateQuestionCounter(currentQuestionNumber); // Update question counter
+    startTimer(timeValue); // Start timer
+    startTimerLine(widthValue); // Start timer line animation
 }
 
 // Function to handle restart button click
@@ -59,49 +70,112 @@ nextButton.onclick = () => {
 
 // Function to display questions
 function showQuestions(index) {
-    // Display question and options
-    // Code for displaying questions and options goes here
+    const questionText = document.querySelector(".question_text");
+    let queTag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
+    let optionTag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>'
+        + '<div class="option"><span>' + questions[index].options[1] + '</span></div>'
+        + '<div class="option"><span>' + questions[index].options[2] + '</span></div>'
+        + '<div class="option"><span>' + questions[index].options[3] + '</span></div>';
+    questionText.innerHTML = queTag; // Adding new question text
+    optionList.innerHTML = optionTag; // Adding new option tags
+    const option = optionList.querySelectorAll(".option");
+    for (let i = 0; i < option.length; i++) {
+        option[i].setAttribute("onclick", "handleOptionSelection(this)");
+    }
 }
 
 // Function to handle option selection
-function handleOptionSelection(answer) {
-    // Handle user's option selection
-    // Code for handling option selection goes here
+function handleOptionSelection(option) {
+    const userAnswer = option.textContent;
+    const correctAnswer = questions[currentQuestion].answer;
+    if (userAnswer === correctAnswer) {
+        option.classList.add("correct");
+        score++;
+    } else {
+        option.classList.add("incorrect");
+    }
+    disableOptions();
+}
+
+// Function to disable options after selection
+function disableOptions() {
+    const option = optionList.children;
+    for (let i = 0; i < option.length; i++) {
+        option[i].classList.add("disabled");
+        if (option[i].textContent === questions[currentQuestion].answer) {
+            option[i].classList.add("correct");
+        }
+    }
 }
 
 // Function to show quiz result
 function showResult() {
-    // Show quiz result based on user's score
-    // Code for displaying quiz result goes here
+    quizBox.classList.remove("activeQuiz"); // Hide quiz box
+    resultBox.classList.add("activeResult"); // Display result box
+    const scoreText = resultBox.querySelector(".score_text");
+    if (score > 15) {
+        let scoreTag = '<span>and congrats! 🎉, You got <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    } else if (score > 10) {
+        let scoreTag = '<span>and nice 😎, You got <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    } else {
+        let scoreTag = '<span>and sorry 😐, You got only <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
 }
 
 // Function to start the timer
 function startTimer(time) {
-    // Start the timer
-    // Code for starting the timer goes here
+    counter = setInterval(timer, 1000);
+    function timer() {
+        timeCount--;
+        timeText.textContent = "Time Left: " + timeCount + "s";
+        if (timeCount <= 0) {
+            clearInterval(counter);
+            timeText.textContent = "Time's up!";
+            showResult();
+        }
+    }
 }
 
 // Function to start timer line animation
 function startTimerLine(time) {
-    // Start timer line animation
-    // Code for starting timer line animation goes here
+    counterLine = setInterval(timer, 29);
+    function timer() {
+        time += 1;
+        timeline.style.width = time + "px";
+        if (time > 549) {
+            clearInterval(counterLine);
+        }
+    }
 }
 
 // Function to update question counter
 function updateQuestionCounter(index) {
-    // Update the question counter
-    // Code for updating question counter goes here
+    questionCounter.textContent = index + " / " + questions.length;
 }
 
 // Function to reset the quiz
 function resetQuiz() {
-    // Reset quiz variables and elements
-    // Code for resetting the quiz goes here
+    currentQuestion = 0;
+    currentQuestionNumber = 1;
+    timeValue = 30;
+    score = 0;
+    widthValue = 0;
+    showQuestions(currentQuestion);
+    updateQuestionCounter(currentQuestionNumber);
+    clearInterval(counter);
+    clearInterval(counterLine);
+    timeText.textContent = "Time Left: 30s";
+    timeline.style.width = "0px";
 }
 
 // Function to end the quiz
 function endQuiz() {
-    // End the quiz
-    // Code for ending the quiz goes here
+    clearInterval(counter);
+    clearInterval(counterLine);
+    disableOptions();
+    showResult();
 }
 
