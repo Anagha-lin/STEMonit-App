@@ -3,60 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEMonIT</title>
+    <title>STEMonIT Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* CSS styles for header */
+        body {
+            background-color: gold;
+            color: gold;
+        }
         header {
             background-color: blue;
-            color: white;
-            padding: 20px;
         }
-
-        /* CSS styles for main content */
-        main {
-            background-color: gold;
-            padding: 20px;
-        }
-
-        /* CSS styles for footer */
         footer {
             background-color: green;
+        }
+        #features, #about, #app {
+            background-color: gold;
+            color: green;
+        }
+        /* New styles */
+        #intro {
+            text-align: center;
+            padding: 100px 0;
+            background-image: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png'); /* Updated image */
+            background-size: cover;
             color: white;
-            padding: 20px;
         }
 
-        /* Additional CSS styles */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+        #intro h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        #intro p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
         }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
             color: white;
             text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .social-media img {
-            width: 30px;
-            height: 30px;
-            margin-left: 10px;
+        .btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -64,46 +58,75 @@
 
 <header>
     <div class="logo">
-        <!-- Your logo image or text -->
         <h1>STEMonIT</h1>
     </div>
     <nav>
-        <!-- Your navigation menu -->
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <!-- Add more menu items as needed -->
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <section class="intro">
-        <!-- Introduction or welcome message -->
-        <h1>Welcome to STEMonIT</h1>
-        <p>Start exploring and learning with our interactive quizzes!</p>
+    <section id="intro">
+        <div class="intro-content">
+            <h1>Welcome to STEMonIT</h1>
+            <p>Explore interactive quizzes and learn STEM topics in a fun way!</p>
+            <a href="#app" class="btn">Get Started</a>
+        </div>
     </section>
-    <!-- Add more content sections as needed -->
+
+    <section id="features">
+        <div class="feature">
+            <img src="https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT_red_button.jpg" alt="Feature 1">
+            <h2>Interactive Quizzes</h2>
+            <p>Engage with quizzes covering various STEM subjects.</p>
+        </div>
+        <div class="feature">
+            <img src="https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT_library_button.jpg" alt="Feature 2">
+            <h2>Learning Resources</h2>
+            <p>Access a library of resources to enhance your STEM knowledge.</p>
+        </div>
+        <div class="feature">
+            <img src="https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT_tracker_png.jpg" alt="Feature 3">
+            <h2>Progress Tracking</h2>
+            <p>Track your progress and see your improvement over time.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-content">
+            <h2>About the Developer</h2>
+            <p>Hi, I'm Anagha Linus, the developer behind STEMonIT. As a passionate advocate for STEM education, I created this platform to make learning STEM topics more accessible and enjoyable for everyone.</p>
+            <p>STEMonIT is not just a project for Holberton School; it's a manifestation of my commitment to empowering learners in the STEM fields.</p>
+            <p>Connect with me on <a href="https://github.com/Anagha-lin/STEMonit-App/tree/main/landing_file">GitHub</a>, and <a href="https://twitter.com/Anaghalinu78299">Twitter</a>.</p>
+        </div>
+    </section>
+
+    <section id="app">
+        <div class="app-content">
+            <h2>Try STEMonIT Now!</h2>
+            <p>Start exploring our interactive quizzes and dive into the world of STEM!</p>
+            <a href="https://github.com/Anagha-lin/STEMonit-App/tree/main/landing_file" class="btn">Explore Now</a>
+        </div>
+    </section>
 </main>
 
 <footer>
     <div class="footer-content">
         <p>&copy; 2024 STEMonIT. All rights reserved.</p>
         <nav>
-            <!-- Links to important pages -->
             <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="social-media">
-            <!-- Social media icons -->
-            <a href="#" aria-label="Facebook"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#" aria-label="Twitter"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="#" aria-label="GitHub"><img src="github-icon.png" alt="GitHub"></a>
-            <!-- Add more social media icons as needed -->
+            <a href="https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/github.png" aria-label="GitHub"><img src="github-icon.png" alt="GitHub"></a>
+            <a href="https://www.facebook.com" aria-label="Facebook"><img src="https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/facebook%20logo.png" alt="Facebook"></a>
         </div>
     </div>
 </footer>

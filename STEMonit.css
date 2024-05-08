@@ -8,15 +8,14 @@
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6;
+    background-color: gold; /* Updated background color */
+    color: gold; /* Updated text color */
 }
 
 /* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: blue;
+    color: white;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -37,7 +36,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-size: 1.1em;
 }
@@ -47,24 +46,10 @@ main {
     padding: 20px;
 }
 
-.intro {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.intro h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.intro p {
-    font-size: 1.1em;
-}
-
 /* Footer styles */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: green;
+    color: white;
     text-align: center;
     padding: 20px 0;
     position: fixed;
@@ -91,12 +76,45 @@ footer {
 }
 
 .footer-content nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 
 .social-media img {
     width: 30px;
     margin-left: 10px;
+}
+
+/* Additional styles */
+#intro {
+    text-align: center;
+    padding: 100px 0;
+    background-image: url('https://raw.githubusercontent.com/Anagha-lin/STEMonit-App/main/landing_file/STEMonIT%20kid%20with%20laptop%20(imp).webp'); /* Updated background image */
+    background-size: cover;
+    color: white;
+}
+
+#intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#intro p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
 }
 
