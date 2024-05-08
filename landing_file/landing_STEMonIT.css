@@ -89,7 +89,7 @@ footer {
 #intro {
     text-align: center;
     padding: 100px 0;
-    background-image: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png'); /* Updated image */
+    background-image: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true'); /* Updated background image */
     background-size: cover;
     color: white;
 }
