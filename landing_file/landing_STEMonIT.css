@@ -80,11 +80,6 @@ footer {
     text-decoration: none;
 }
 
-.social-media img {
-    width: 30px;
-    margin-left: 10px;
-}
-
 /* Additional styles */
 #intro {
     text-align: center;
@@ -116,5 +111,30 @@ footer {
 
 .btn:hover {
     background-color: #0056b3;
+}
+
+/* New feature section styles */
+#features {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.feature {
+    margin-bottom: 50px;
+}
+
+.feature img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.feature h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1.1em;
 }
 
