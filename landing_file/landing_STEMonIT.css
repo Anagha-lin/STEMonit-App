@@ -1,182 +1,120 @@
-/* Global styles */
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
 body {
-    background-color: gold;
-    color: white;
     font-family: Arial, sans-serif;
+    background-color: gold; /* Updated background color */
+    color: gold; /* Updated text color */
 }
 
 /* Header styles */
 header {
     background-color: blue;
+    color: white;
     padding: 20px;
-    text-align: right; /* Align header content to the right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo h1 {
-    margin: 0; /* Remove default margin */
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 1.5em;
 }
 
 nav ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
+    list-style-type: none;
 }
 
 nav ul li {
-    display: inline-block; /* Display navigation items inline */
-    margin-right: 20px; /* Add spacing between navigation items */
+    display: inline;
+    margin-right: 20px;
 }
 
 nav ul li a {
-    text-decoration: none; /* Remove underline from links */
     color: white;
+    text-decoration: none;
+    font-size: 1.1em;
 }
 
-/* Main content styles */
+/* Main styles */
 main {
     padding: 20px;
 }
 
-/* Introduction section styles */
-#intro {
-    padding: 50px 0;
-    text-align: center;
-}
-
-.intro-content {
-    max-width: 800px; /* Set maximum width for content */
-    margin: 0 auto; /* Center align content */
-}
-
-.intro-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.intro-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-/* Features section styles */
-#features {
-    background-color: white;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.feature {
-    max-width: 300px;
-    margin: 0 auto 30px; /* Center align feature items */
-}
-
-.feature img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.feature h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.feature p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* About section styles */
-#about {
-    padding: 50px 0;
-    text-align: center;
-    background-color: white;
-}
-
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-content h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.about-content a {
-    color: blue; /* Change link color */
-}
-
-/* App section styles */
-#app {
-    padding: 50px 0;
-    text-align: center;
-}
-
-.app-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.app-content h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.app-content p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.app-content .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.app-content .btn:hover {
-    background-color: darkblue;
-}
-
 /* Footer styles */
 footer {
-    background-color: gold;
-    padding: 20px;
+    background-color: green;
+    color: white;
     text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-content {
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer-content p {
     margin: 0;
 }
 
-.social-media {
-    margin-top: 20px;
+.footer-content nav ul {
+    display: flex;
 }
 
-.social-media a {
-    display: inline-block;
+.footer-content nav ul li {
     margin-right: 10px;
+}
+
+.footer-content nav ul li a {
+    color: white;
+    text-decoration: none;
 }
 
 .social-media img {
     width: 30px;
-    height: 30px;
+    margin-left: 10px;
+}
+
+/* Additional styles */
+#intro {
+    text-align: center;
+    padding: 100px 0;
+    background-image: url('kid_with_laptop.jpg'); /* Updated background image */
+    background-size: cover;
+    color: white;
+}
+
+#intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#intro p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
 }
 
