@@ -20,7 +20,6 @@ let timeValue = 30;
 let counterLine;
 let counter;
 let score = 0;
-let counterTime;
 let widthValue = 0;
 
 // Function to handle start button click
@@ -129,9 +128,9 @@ function showResult() {
 function startTimer(time) {
     counter = setInterval(timer, 1000);
     function timer() {
-        timeCount--;
-        timeText.textContent = "Time Left: " + timeCount + "s";
-        if (timeCount <= 0) {
+        timeValue--;
+        timeText.textContent = "Time Left: " + timeValue + "s";
+        if (timeValue <= 0) {
             clearInterval(counter);
             timeText.textContent = "Time's up!";
             showResult();
