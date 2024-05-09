@@ -40,6 +40,7 @@ footer {
     color: white;
     background-image: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true');
     /* Added background image */
+    background-color: gold; /* Ensure background color is applied */
 }
 
 #intro h1 {
