@@ -1,90 +1,27 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* styles.css */
 
-/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: gold; /* Updated background color */
-    color: gold; /* Updated text color */
+    background-color: gold;
+    color: gold;
 }
 
-/* Header styles */
 header {
     background-color: blue;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.logo h1 {
-    font-size: 1.5em;
-}
-
-nav ul {
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-/* Main styles */
-main {
-    padding: 20px;
-}
-
-/* Footer styles */
 footer {
     background-color: green;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#features, #about, #app {
+    background-color: gold;
+    color: green;
 }
 
-.footer-content p {
-    margin: 0;
-}
-
-.footer-content nav ul {
-    display: flex;
-}
-
-.footer-content nav ul li {
-    margin-right: 10px;
-}
-
-.footer-content nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Additional styles */
+/* New styles */
 #intro {
     text-align: center;
     padding: 100px 0;
-    background-image: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true'); /* Updated background image */
     background-size: cover;
     color: white;
 }
