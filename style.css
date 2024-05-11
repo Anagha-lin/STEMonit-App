@@ -4,6 +4,8 @@ body {
     background-color: gold;
     color: white; /* Update text color to white for better visibility */
     font-family: Arial, sans-serif; /* Added font-family */
+    background-image: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true');
+    background-size: cover;
 }
 
 header {
@@ -36,10 +38,7 @@ footer {
 #intro {
     text-align: center;
     padding: 100px 0;
-    background-size: cover;
     color: white;
-    background-image: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true');
-    /* Added background image */
 }
 
 #intro h1 {
