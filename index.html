@@ -4,23 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEMonIT Landing Page</title>
-    <link rel="stylesheet" href="https://anagha-lin.github.io/STEMonit-App/styles.css">
     <style>
-        /* Add any additional styles if needed */
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white; /* Set text color to white for better visibility */
+            background: url('https://github.com/Anagha-lin/STEMonit-App-index.html/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true') center/cover fixed, gold;
+            /* 50% cover image, 50% gold background */
+        }
+
+        header {
+            background-color: blue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: green;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
 
         main {
             padding: 20px;
+            color: black; /* default color for main content */
         }
 
-        /* Add additional CSS styles as needed */
+        /* Style for navigation links */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: lightgray;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: darkblue;
+        }
+
+        /* Style for feature section */
+        #features {
+            padding: 20px 0;
+        }
+
+        .QUIZ {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        .QUIZ img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Style for about section */
+        #about {
+            padding: 20px 0;
+        }
+
+        .team-members ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .team-members ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .github-repo {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -31,42 +110,24 @@
     </div>
     <nav>
         <ul>
-            <li><a href="#about">About</a></li>
             <li><a href="#features">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
         </ul>
     </nav>
+    <a href="https://anagha-lin.github.io/STEMonit-App/index.html" class="btn">Go to App</a>
 </header>
 
 <main>
-    <section id="intro">
-        <div class="intro-content">
-            <h1>Welcome to STEMonIT</h1>
-            <p>Explore interactive quizzes and learn STEM topics in a fun way!</p>
-            <!-- Updated link to landing file -->
-            <a href="https://anagha-lin.github.io/STEMonit-App/index.html" class="btn">Visit Landing Page</a>
-        </div>
-    </section>
-
-    <!-- Add more sections as needed -->
-
+    <!-- Content goes here -->
+    <div class="QUIZ">
+        <a href="https://Anagha-lin.github.io/STEMonit-App-index.html/STEMonit.html" class="cta">Visit the App</a>
+        <h2>Interactive Quizzes</h2>
+        <p>Engage in interactive quizzes covering various STEM topics. Test your knowledge and reinforce learning through fun and challenging quizzes designed to enhance understanding.</p>
+    </div>
 </main>
 
 <footer>
-    <div class="footer-content">
-        <p>&copy; 2024 STEMonIT. All rights reserved.</p>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="social-media">
-            <a href="#" aria-label="GitHub"><img src="https://anagha-lin.github.io/STEMonit-App/github-icon.png" alt="GitHub"></a>
-            <a href="https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/facebook%20logo%20(2).png?raw=true" aria-label="Facebook"><img src="https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/facebook%20logo%20(2).png?raw=true" alt="Facebook"></a>
-        </div>
-    </div>
+    <p>&copy; 2024 STEMonIT. All rights reserved.</p>
 </footer>
 
 </body>

@@ -1,92 +1,111 @@
-/* styles.css */
-
 body {
-    background-color: gold;
-    color: white; /* Update text color to white for better visibility */
-    font-family: Arial, sans-serif; /* Added font-family */
-    background-image: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true');
-    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://github.com/Anagha-lin/STEMonit-App-index.html/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true') center/cover fixed, gold;
+    /* 50% cover image, 50% gold background */
 }
 
 header {
     background-color: blue;
-    color: white; /* Updated text color */
+    color: white;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
 footer {
     background-color: green;
     color: white;
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
-#features,
-#about,
-#app {
-    background-color: gold;
-    color: green;
+main {
+    padding: 20px;
+    color: black; /* default color for main content */
 }
 
-/* New styles */
-#intro {
-    text-align: center;
-    padding: 100px 0;
+/* Style for navigation links */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
     color: white;
 }
 
-#intro h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-#intro p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+nav ul li a:hover {
+    color: lightgray;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: blue;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: darkblue;
 }
 
-/* New feature section styles */
+/* Style for feature section */
 #features {
-    text-align: center;
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
-.feature {
-    margin-bottom: 50px;
+.QUIZ {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
 }
 
-.feature img {
+.QUIZ img {
     max-width: 100%;
-    border-radius: 10px;
+    height: auto;
 }
 
-.feature h2 {
-    font-size: 1.8em;
+/* Style for about section */
+#about {
+    padding: 20px 0;
+}
+
+.team-members ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.team-members ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.github-repo {
     margin-top: 20px;
-    margin-bottom: 10px;
 }
 
-.feature p {
-    font-size: 1.1em;
+/* Additional Style */
+.cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: darkblue;
 }
 
