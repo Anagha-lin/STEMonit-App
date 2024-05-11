@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('https://github.com/Anagha-lin/STEMonit-App-index.html/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true') center/cover fixed, gold;
+    background: url('https://github.com/Anagha-lin/STEMonit-App-index.html/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true') center/gold, cover fixed;
     /* 50% cover image, 50% gold background */
 }
 
