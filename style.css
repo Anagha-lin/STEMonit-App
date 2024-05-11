@@ -1,8 +1,13 @@
+/* Reset CSS */
 body {
     margin: 0;
     padding: 0;
+}
+
+/* General Styles */
+body {
     font-family: Arial, sans-serif;
-    background: url('https://github.com/Anagha-lin/STEMonit-App/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true') center/gold, cover fixed;
+    background: url('https://github.com/Anagha-lin/STEMonit-App-index.html/blob/main/landing_file/STEMonIT%20cover%20page.png?raw=true') center/cover fixed, gold;
     /* 50% cover image, 50% gold background */
 }
 
@@ -25,7 +30,7 @@ main {
     color: black; /* default color for main content */
 }
 
-/* Style for navigation links */
+/* Navigation Links */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -45,7 +50,8 @@ nav ul li a:hover {
     color: lightgray;
 }
 
-.btn {
+/* Call to Action Button */
+.cta {
     display: inline-block;
     padding: 10px 20px;
     background-color: blue;
@@ -55,11 +61,11 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.cta:hover {
     background-color: darkblue;
 }
 
-/* Style for feature section */
+/* Feature Section */
 #features {
     padding: 20px 0;
 }
@@ -75,7 +81,7 @@ nav ul li a:hover {
     height: auto;
 }
 
-/* Style for about section */
+/* About Section */
 #about {
     padding: 20px 0;
 }
@@ -92,20 +98,5 @@ nav ul li a:hover {
 
 .github-repo {
     margin-top: 20px;
-}
-
-/* Additional Style */
-.cta {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: blue;
-    color: gold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.cta:hover {
-    background-color: darkblue;
 }
 
