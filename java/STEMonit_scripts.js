@@ -1,18 +1,18 @@
 // Selecting all necessary elements
-const startButton = document.querySelector(".start_btn button");
+const startBtn = document.querySelector(".start_btn button");
 const infoBox = document.querySelector(".info_box");
-const exitButton = infoBox.querySelector(".buttons .quit");
-const continueButton = infoBox.querySelector(".buttons .restart");
+const exitBtn = infoBox.querySelector(".buttons .quit");
+const continueBtn = infoBox.querySelector(".buttons .restart");
 const quizBox = document.querySelector(".quiz_box");
 const resultBox = document.querySelector(".result_box");
 const optionList = document.querySelector(".option_list");
 const timeline = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCounter = document.querySelector(".timer .timer_sec");
-const nextButton = document.querySelector("footer .next_btn");
+const nextBtn = document.querySelector("footer .next_btn");
 const questionCounter = document.querySelector("footer .total_que");
-const restartButton = document.querySelector(".buttons .restart"); // Declare restartButton
-const quitButton = document.querySelector(".buttons .quit"); // Declare quitButton
+const restartBtn = document.querySelector(".buttons .restart"); // Declare restartBtn
+const quitBtn = document.querySelector(".buttons .quit"); // Declare quitBtn
 
 let currentQuestion = 0;
 let currentQuestionNumber = 1;
@@ -23,17 +23,17 @@ let score = 0;
 let widthValue = 0;
 
 // Function to handle start button click
-startButton.onclick = () => {
+startBtn.onclick = () => {
     infoBox.classList.add("activeInfo"); // Display info box
 }
 
 // Function to handle exit button click
-exitButton.onclick = () => {
+exitBtn.onclick = () => {
     infoBox.classList.remove("activeInfo"); // Hide info box
 }
 
 // Function to handle continue button click
-continueButton.onclick = () => {
+continueBtn.onclick = () => {
     infoBox.classList.remove("activeInfo"); // Hide info box
     quizBox.classList.add("activeQuiz"); // Display quiz box
     showQuestions(currentQuestion); // Display first question
@@ -43,19 +43,19 @@ continueButton.onclick = () => {
 }
 
 // Function to handle restart button click
-restartButton.onclick = () => {
+restartBtn.onclick = () => {
     quizBox.classList.add("activeQuiz"); // Display quiz box
     resultBox.classList.remove("activeResult"); // Hide result box
     resetQuiz(); // Reset quiz variables and elements
 }
 
 // Function to handle quit button click
-quitButton.onclick = () => {
+quitBtn.onclick = () => {
     window.location.reload(); // Reload the current window
 }
 
 // Function to handle next question button click
-nextButton.onclick = () => {
+nextBtn.onclick = () => {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++; // Move to the next question
         currentQuestionNumber++; // Increment question counter
