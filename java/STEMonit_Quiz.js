@@ -1,5 +1,4 @@
-// Array of quiz questions
-const questions = [
+let questions = [
     {
         numb: 1,
         question: "Which of the following is NOT a fundamental force in nature?",
