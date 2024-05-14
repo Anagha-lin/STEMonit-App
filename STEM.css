@@ -1,9 +1,18 @@
+/* importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 /* Global Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', Arial, sans-serif; /* Added 'Poppins' font */
     background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Start Quiz Button */
@@ -96,115 +105,5 @@ body {
 
 .quiz_box .time_line {
     height: 5px;
-    background-color: blue;
-    margin-bottom: 20px;
-}
-
-.quiz_box section {
-    margin-bottom: 20px;
-}
-
-.quiz_box .que_text {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.quiz_box .option_list .option {
-    margin-bottom: 10px;
-}
-
-.quiz_box footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.quiz_box .total_que {
-    font-size: 18px;
-}
-
-.quiz_box .next_btn {
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.quiz_box .next_btn:hover {
-    background-color: darkblue;
-}
-
-/* Result Box */
-.result_box {
-    display: none;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-}
-
-.result_box .icon {
-    font-size: 48px;
-    color: gold;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.result_box .complete_text {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.result_box .score_text {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.result_box .buttons {
-    text-align: center;
-}
-
-.result_box .restart,
-.result_box .quit {
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.result_box .restart:hover,
-.result_box .quit:hover {
-    background-color: darkblue;
-}
-
-/* Additional Styles */
-.cover_image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("https://github.com/Anagha-lin/STEMonit-App/blob/264f8cca52d7195295ea6452bebd5245b0c89282/landing_file/STEMonIT%20cover%20page.png");
-    background-size: cover;
-    background-position: center;
-}
-
-footer {
-    background-color: green;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-}
+   
 
