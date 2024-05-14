@@ -1,3 +1,6 @@
+// Adding logs to confirm script is loaded
+console.log("STEMonit_scripts.js is loaded");
+
 // Selecting all necessary elements
 const startBtn = document.querySelector(".start_btn button");
 const infoBox = document.querySelector(".info_box");
@@ -24,16 +27,19 @@ let widthValue = 0;
 
 // Function to handle start button click
 startBtn.onclick = () => {
+    console.log("Start button clicked");
     infoBox.classList.add("activeInfo"); // Display info box
 }
 
 // Function to handle exit button click
 exitBtn.onclick = () => {
+    console.log("Exit button clicked");
     infoBox.classList.remove("activeInfo"); // Hide info box
 }
 
 // Function to handle continue button click
 continueBtn.onclick = () => {
+    console.log("Continue button clicked");
     infoBox.classList.remove("activeInfo"); // Hide info box
     quizBox.classList.add("activeQuiz"); // Display quiz box
     showQuestions(currentQuestion); // Display first question
@@ -44,6 +50,7 @@ continueBtn.onclick = () => {
 
 // Function to handle restart button click
 restartBtn.onclick = () => {
+    console.log("Restart button clicked");
     quizBox.classList.add("activeQuiz"); // Display quiz box
     resultBox.classList.remove("activeResult"); // Hide result box
     resetQuiz(); // Reset quiz variables and elements
@@ -51,11 +58,13 @@ restartBtn.onclick = () => {
 
 // Function to handle quit button click
 quitBtn.onclick = () => {
+    console.log("Quit button clicked");
     window.location.reload(); // Reload the current window
 }
 
 // Function to handle next question button click
 nextBtn.onclick = () => {
+    console.log("Next button clicked");
     if (currentQuestion < questions.length - 1) {
         currentQuestion++; // Move to the next question
         currentQuestionNumber++; // Increment question counter
@@ -69,6 +78,7 @@ nextBtn.onclick = () => {
 
 // Function to display questions
 function showQuestions(index) {
+    console.log("Displaying question", index);
     const questionText = document.querySelector(".question_text");
     let queTag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
     let optionTag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>'
@@ -85,6 +95,7 @@ function showQuestions(index) {
 
 // Function to handle option selection
 function handleOptionSelection(option) {
+    console.log("Option selected", option.textContent);
     const userAnswer = option.textContent;
     const correctAnswer = questions[currentQuestion].answer;
     if (userAnswer === correctAnswer) {
@@ -109,6 +120,7 @@ function disableOptions() {
 
 // Function to show quiz result
 function showResult() {
+    console.log("Showing result");
     quizBox.classList.remove("activeQuiz"); // Hide quiz box
     resultBox.classList.add("activeResult"); // Display result box
     const scoreText = resultBox.querySelector(".score_text");
@@ -116,65 +128,5 @@ function showResult() {
         let scoreTag = '<span>and congrats! 🎉, You got <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
         scoreText.innerHTML = scoreTag;
     } else if (score > 10) {
-        let scoreTag = '<span>and nice 😎, You got <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
-        scoreText.innerHTML = scoreTag;
-    } else {
-        let scoreTag = '<span>and sorry 😐, You got only <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
-        scoreText.innerHTML = scoreTag;
-    }
-}
-
-// Function to start the timer
-function startTimer(time) {
-    counter = setInterval(timer, 1000);
-    function timer() {
-        timeValue--;
-        timeText.textContent = "Time Left: " + timeValue + "s";
-        if (timeValue <= 0) {
-            clearInterval(counter);
-            timeText.textContent = "Time's up!";
-            showResult();
-        }
-    }
-}
-
-// Function to start timer line animation
-function startTimerLine(time) {
-    counterLine = setInterval(timer, 29);
-    function timer() {
-        time += 1;
-        timeline.style.width = time + "px";
-        if (time > 549) {
-            clearInterval(counterLine);
-        }
-    }
-}
-
-// Function to update question counter
-function updateQuestionCounter(index) {
-    questionCounter.textContent = index + " / " + questions.length;
-}
-
-// Function to reset the quiz
-function resetQuiz() {
-    currentQuestion = 0;
-    currentQuestionNumber = 1;
-    timeValue = 30;
-    score = 0;
-    widthValue = 0;
-    showQuestions(currentQuestion);
-    updateQuestionCounter(currentQuestionNumber);
-    clearInterval(counter);
-    clearInterval(counterLine);
-    timeText.textContent = "Time Left: 30s";
-    timeline.style.width = "0px";
-}
-
-// Function to end the quiz
-function endQuiz() {
-    clearInterval(counter);
-    clearInterval(counterLine);
-    disableOptions();
-    showResult();
-}
+        let scoreTag = '<span>and nice 😎, You got <p>' + score + '</p> out of <p>' + questions.length +
 
