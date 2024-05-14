@@ -31,7 +31,8 @@ body {
 /* Info Box */
 .info_box {
     display: none;
-    background-color: #fff;
+    background: linear-gradient(90deg, gold 50%, url('https://github.com/Anagha-lin/STEMonit-App/blob/264f8cca52d7195295ea6452bebd5245b0c89282/landing_file/STEMonIT%20cover%20page.png') 50%);
+    background-size: cover;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
@@ -114,16 +115,43 @@ body {
 
 .quiz_box .option_list .option {
     margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz_box .option_list .option:hover {
+    background-color: #e0e0e0;
+}
+
+.quiz_box .option_list .option.correct {
+    background-color: #28a745;
+    color: white;
+}
+
+.quiz_box .option_list .option.incorrect {
+    background-color: #dc3545;
+    color: white;
+}
+
+.quiz_box .option_list .option.disabled {
+    pointer-events: none;
 }
 
 .quiz_box footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
+    background-color: green;
+    padding: 10px;
 }
 
 .quiz_box .total_que {
     font-size: 18px;
+    color: white;
 }
 
 .quiz_box .next_btn {
@@ -137,6 +165,10 @@ body {
 
 .quiz_box .next_btn:hover {
     background-color: darkblue;
+}
+
+.quiz_box .next_btn.show {
+    display: inline-block;
 }
 
 /* Result Box */
