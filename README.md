@@ -1,5 +1,5 @@
 # STEMonit-App
-the STEMonit project is an application designed for young lads to examine how much they know about STEM subjects
+The STEMonit project is an application designed for young lads to examine how much they know about STEM subjects
 
 
 Project Proposal: STEMonIT - Enhancing STEM Education Through Interactive Quizzes
