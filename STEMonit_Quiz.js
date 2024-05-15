@@ -1,3 +1,4 @@
+// Define the questions array
 let questions = [
     {
         numb: 1,
@@ -330,4 +331,111 @@ let questions = [
         ]
     }
 ];
+
+// Function to start the quiz
+function startQuiz() {
+    // Initialize necessary elements
+    const startButton = document.querySelector(".start_btn button");
+    const infoBox = document.querySelector(".info_box");
+    const quizBox = document.querySelector(".quiz_box");
+    const questionCounter = document.querySelector("footer .total_que");
+    const nextButton = document.querySelector("footer .next_btn");
+
+    let currentQuestion = 0;
+    let currentQuestionNumber = 1;
+    let timeValue = 20; // Set the initial time for each question
+    let counterLine;
+    let counter;
+    let score = 0;
+    let widthValue = 0;
+
+    // Function to handle start button click
+    startButton.onclick = () => {
+        infoBox.classList.add("activeInfo"); // Display info box
+    }
+
+    // Function to handle continue button click
+    nextButton.onclick = () => {
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++; // Move to the next question
+            currentQuestionNumber++; // Increment question counter
+            showQuestions(currentQuestion); // Display next question
+            updateQuestionCounter(currentQuestionNumber); // Update question counter
+            resetTimer(); // Reset timer
+        } else {
+            endQuiz(); // End the quiz if all questions have been answered
+        }
+    }
+
+    // Function to display questions
+    function showQuestions(index) {
+        const questionText = document.querySelector(".question_text");
+        let queTag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
+        let optionTag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>'
+            + '<div class="option"><span>' + questions[index].options[1] + '</span></div>'
+            + '<div class="option"><span>' + questions[index].options[2] + '</span></div>'
+            + '<div class="option"><span>' + questions[index].options[3] + '</span></div>';
+        questionText.innerHTML = queTag; // Adding new question text
+        optionList.innerHTML = optionTag; // Adding new option tags
+        const option = optionList.querySelectorAll(".option");
+        for (let i = 0; i < option.length; i++) {
+            option[i].setAttribute("onclick", "handleOptionSelection(this)");
+        }
+    }
+
+    // Function to update question counter
+    function updateQuestionCounter(index) {
+        questionCounter.textContent = index + " / " + questions.length;
+    }
+
+    // Function to reset the timer
+    function resetTimer() {
+        clearInterval(counter);
+        clearInterval(counterLine);
+        timeValue = 20; // Reset the time for each question
+        widthValue = 0;
+        startTimer(timeValue); // Start the timer again
+        startTimerLine(widthValue); // Start timer line animation again
+    }
+
+    // Call the function to display the first question
+    showQuestions(currentQuestion);
+    updateQuestionCounter(currentQuestionNumber);
+}
+
+// Function to handle option selection
+function handleOptionSelection(option) {
+    const userAnswer = option.textContent;
+    const correctAnswer = questions[currentQuestion].answer;
+    if (userAnswer === correctAnswer) {
+        option.classList.add("correct");
+        score++;
+    } else {
+        option.classList.add("incorrect");
+    }
+    disableOptions();
+}
+
+// Function to disable options after selection
+function disableOptions() {
+    const option = optionList.children;
+    for (let i = 0; i < option.length; i++) {
+        option[i].classList.add("disabled");
+        if (option[i].textContent === questions[currentQuestion].answer) {
+            option[i].classList.add("correct");
+        }
+    }
+}
+
+// Function to show quiz result
+function showResult() {
+    quizBox.classList.remove("activeQuiz"); // Hide quiz box
+    resultBox.classList.add("activeResult"); // Display result box
+    const scoreText = resultBox.querySelector(".score_text");
+    if (score > 15) {
+        let scoreTag = '<span>and congrats! 🎉, You got <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    } else if (score > 10) {
+        let scoreTag = '<span>and nice 😎, You got <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML =
 
