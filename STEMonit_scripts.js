@@ -1,12 +1,12 @@
 // Selecting all necessary elements
 const startButton = document.querySelector(".start_btn button");
-const infoBox = document.querySelector(".info_box");
-const exitButton = infoBox.querySelector(".buttons .quit");
-const continueButton = infoBox.querySelector(".buttons .restart");
-const quizBox = document.querySelector(".quiz_box");
-const resultBox = document.querySelector(".result_box");
-const optionList = document.querySelector(".option_list");
-const timeline = document.querySelector("header .time_line");
+const info_box = document.querySelector(".info_box");
+const exit_btn = infoBox.querySelector(".buttons .quit");
+const continue_button = info_box.querySelector(".buttons .restart");
+const quiz_box = document.querySelector(".quiz_box");
+const result_box = document.querySelector(".result_box");
+const option_list = document.querySelector(".option_list");
+const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCounter = document.querySelector(".timer .timer_sec");
 const nextButton = document.querySelector("footer .next_btn");
@@ -24,20 +24,20 @@ let widthValue = 0;
 
 // Function to handle start button click
 startButton.onclick = () => {
-    infoBox.classList.add("activeInfo"); // Display info box
+    info_box.classList.add("activeInfo"); // Display info box
 }
 
 // Function to handle exit button click
 exitButton.onclick = () => {
-    infoBox.classList.remove("activeInfo"); // Hide info box
+    info_box.classList.remove("activeInfo"); // Hide info box
 }
 
 // Function to handle continue button click
-continueButton.onclick = () => {
-    infoBox.classList.remove("activeInfo"); // Hide info box
-    quizBox.classList.add("activeQuiz"); // Display quiz box
+continue_btn.onclick = () => {
+    info_box.classList.remove("activeInfo"); // Hide info box
+    quiz_box.classList.add("activeQuiz"); // Display quiz box
     showQuestions(currentQuestion); // Display first question
-    updateQuestionCounter(currentQuestionNumber); // Update question counter
+    queCounter(currentQuestionNumber); // Update question counter
     startTimer(timeValue); // Start timer
     startTimerLine(widthValue); // Start timer line animation
 }
