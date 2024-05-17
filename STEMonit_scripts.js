@@ -70,14 +70,14 @@ nextButton.onclick = () => {
 // Function to display questions
 function showQuestions(index) {
     const que_text = document.querySelector(".que_text");
-    let queTag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
-    let optionTag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>'
+    let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
+    let option_tag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[1] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[2] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[3] + '</span></div>';
-    questionText.innerHTML = queTag; // Adding new question text
-    optionList.innerHTML = optionTag; // Adding new option tags
-    const option = optionList.querySelectorAll(".option");
+    que_text.innerHTML = que_tag; // Adding new question text
+    option_list.innerHTML = option_tag; // Adding new option tags
+    const option = option_list.querySelectorAll(".option");
     for (let i = 0; i < option.length; i++) {
         option[i].setAttribute("onclick", "handleOptionSelection(this)");
     }
