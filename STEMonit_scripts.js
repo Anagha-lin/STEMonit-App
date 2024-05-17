@@ -69,7 +69,7 @@ nextButton.onclick = () => {
 
 // Function to display questions
 function showQuestions(index) {
-    const questionText = document.querySelector(".question_text");
+    const que_text = document.querySelector(".que_text");
     let queTag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
     let optionTag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[1] + '</span></div>'
