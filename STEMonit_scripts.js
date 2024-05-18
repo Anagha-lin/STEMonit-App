@@ -1,180 +1,212 @@
-// Selecting all necessary elements
-const startButton = document.querySelector(".start_btn button");
+// Selecting all required elements
+const bottom_ques_counter = document.querySelector("footer .total_que");
+const continue_btn = document.querySelector(".info_box .buttons .restart");
+const exit_btn = document.querySelector(".info_box .buttons .quit");
 const info_box = document.querySelector(".info_box");
-const exit_btn = infoBox.querySelector(".buttons .quit");
-const continue_button = info_box.querySelector(".buttons .restart");
+const next_btn = document.querySelector("footer .next_btn");
+const option_list = document.querySelector(".option_list");
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
-const option_list = document.querySelector(".option_list");
+const start_btn = document.querySelector(".start_btn button");
+const timeCount = document.querySelector(".timer .timer_sec");
 const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
-const timeCounter = document.querySelector(".timer .timer_sec");
-const nextButton = document.querySelector("footer .next_btn");
-const questionCounter = document.querySelector("footer .total_que");
-const restartButton = document.querySelector(".buttons .restart"); // Declare restartButton
-const quitButton = document.querySelector(".buttons .quit"); // Declare quitButton
+const quit_quiz = result_box.querySelector(".buttons .quit");
+const restart_quiz = result_box.querySelector(".buttons .restart");
 
-let currentQuestion = 0;
-let currentQuestionNumber = 1;
-let timeValue = 30;
-let counterLine;
-let counter;
-let score = 0;
-let widthValue = 0;
-
-// Function to handle start button click
-startButton.onclick = () => {
-    info_box.classList.add("activeInfo"); // Display info box
+// If startQuiz button clicked
+start_btn.onclick = () => {
+    info_box.classList.add("activeInfo"); // Show info box
 }
 
-// Function to handle exit button click
-exitButton.onclick = () => {
+// If exitQuiz button clicked
+exit_btn.onclick = () => {
     info_box.classList.remove("activeInfo"); // Hide info box
 }
 
-// Function to handle continue button click
+// If continueQuiz button clicked
 continue_btn.onclick = () => {
     info_box.classList.remove("activeInfo"); // Hide info box
-    quiz_box.classList.add("activeQuiz"); // Display quiz box
-    showQuestions(currentQuestion); // Display first question
-    queCounter(currentQuestionNumber); // Update question counter
-    startTimer(timeValue); // Start timer
-    startTimerLine(widthValue); // Start timer line animation
+    quiz_box.classList.add("activeQuiz"); // Show quiz box
+    showQuetions(0); // Call showQestions function
+    queCounter(1); // Pass 1 parameter to queCounter
+    startTimer(30); // Call startTimer function
+    startTimerLine(0); // Call startTimerLine function
 }
 
-// Function to handle restart button click
-restartButton.onclick = () => {
-    quizBox.classList.add("activeQuiz"); // Display quiz box
-    resultBox.classList.remove("activeResult"); // Hide result box
-    resetQuiz(); // Reset quiz variables and elements
+let counter;
+let counterLine;
+let que_count = 0;
+let que_numb = 1;
+let timeValue = 30;
+let userScore = 0;
+let widthValue = 0;
+
+// If restartQuiz button clicked
+restart_quiz.onclick = () => {
+    quiz_box.classList.add("activeQuiz"); // Show quiz box
+    result_box.classList.remove("activeResult"); // Hide result box
+    timeValue = 30;
+    que_count = 0;
+    que_numb = 1;
+    userScore = 0;
+    widthValue = 0;
+    showQuetions(que_count); // Call showQestions function
+    queCounter(que_numb); // Pass que_numb value to queCounter
+    clearInterval(counter); // Clear counter
+    clearInterval(counterLine); // Clear counterLine
+    startTimer(timeValue); // Call startTimer function
+    startTimerLine(widthValue); // Call startTimerLine function
+    timeText.textContent = "Time Left"; // Change the text of timeText to Time Left
+    next_btn.classList.remove("show"); // Hide the next button
 }
 
-// Function to handle quit button click
-quitButton.onclick = () => {
+// If quitQuiz button clicked
+quit_quiz.onclick = () => {
     window.location.reload(); // Reload the current window
 }
 
-// Function to handle next question button click
-nextButton.onclick = () => {
-    if (currentQuestion < questions.length - 1) {
-        currentQuestion++; // Move to the next question
-        currentQuestionNumber++; // Increment question counter
-        showQuestions(currentQuestion); // Display next question
-        updateQuestionCounter(currentQuestionNumber); // Update question counter
-        resetTimer(); // Reset timer
+// If Next Que button clicked
+next_btn.onclick = () => {
+    if (que_count < questions.length - 1) { // If question count is less than total question length
+        que_count++; // Increment the que_count value
+        que_numb++; // Increment the que_numb value
+        showQuetions(que_count); // Call showQestions function
+        queCounter(que_numb); // Pass que_numb value to queCounter
+        clearInterval(counter); // Clear counter
+        clearInterval(counterLine); // Clear counterLine
+        startTimer(timeValue); // Call startTimer function
+        startTimerLine(widthValue); // Call startTimerLine function
+        timeText.textContent = "Time Left"; // Change the timeText to Time Left
+        next_btn.classList.remove("show"); // Hide the next button
     } else {
-        endQuiz(); // End the quiz if all questions have been answered
+        clearInterval(counter); // Clear counter
+        clearInterval(counterLine); // Clear counterLine
+        showResult(); // Call showResult function
     }
 }
 
-// Function to display questions
-function showQuestions(index) {
+// Getting questions and options from array
+function showQuetions(index) {
     const que_text = document.querySelector(".que_text");
+
+    // Creating a new span and div tag for question and option and passing the value using array index
     let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
     let option_tag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[1] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[2] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[3] + '</span></div>';
-    que_text.innerHTML = que_tag; // Adding new question text
-    option_list.innerHTML = option_tag; // Adding new option tags
+    que_text.innerHTML = que_tag; // Adding new span tag inside que_tag
+    option_list.innerHTML = option_tag; // Adding new div tag inside option_tag
+
     const option = option_list.querySelectorAll(".option");
-    for (let i = 0; i < option.length; i++) {
-        option[i].setAttribute("onclick", "handleOptionSelection(this)");
+
+    // Set onclick attribute to all available options
+    for (i = 0; i < option.length; i++) {
+        option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
 
-// Function to handle option selection
-function handleOptionSelection(option) {
-    const userAnswer = option.textContent;
-    const correctAnswer = questions[currentQuestion].answer;
-    if (userAnswer === correctAnswer) {
-        option.classList.add("correct");
-        score++;
+// Creating the new div tags which for icons
+let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
+let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+
+// If user clicked on option
+function optionSelected(answer) {
+    clearInterval(counter); // Clear counter
+    clearInterval(counterLine); // Clear counterLine
+    let userAns = answer.textContent; // Getting user selected option
+    let correcAns = questions[que_count].answer; // Getting correct answer from array
+    const allOptions = option_list.children.length; // Getting all option items
+
+    if (userAns == correcAns) { // If user selected option is equal to array's correct answer
+        userScore += 1; // Upgrade score value with 1
+        answer.classList.add("correct"); // Add green color to correct selected option
+        answer.insertAdjacentHTML("beforeend", tickIconTag); // Add tick icon to correct selected option
+        console.log("Correct Answer");
+        console.log("Your correct answers = " + userScore);
     } else {
-        option.classList.add("incorrect");
-    }
-    disableOptions();
-}
+        answer.classList.add("incorrect"); // Add red color to correct selected option
+        answer.insertAdjacentHTML("beforeend", crossIconTag); // Add cross icon to correct selected option
+        console.log("Wrong Answer");
 
-// Function to disable options after selection
-function disableOptions() {
-    const option = optionList.children;
-    for (let i = 0; i < option.length; i++) {
-        option[i].classList.add("disabled");
-        if (option[i].textContent === questions[currentQuestion].answer) {
-            option[i].classList.add("correct");
+        for (i = 0; i < allOptions; i++) {
+            if (option_list.children[i].textContent == correcAns) { // If there is an option which is matched to an array answer
+                option_list.children[i].setAttribute("class", "option correct"); // Add green color to matched option
+                option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); // Add tick icon to matched option
+                console.log("Auto selected correct answer.");
+            }
         }
     }
+    for (i = 0; i < allOptions; i++) {
+        option_list.children[i].classList.add("disabled"); // Once user select an option then disable all options
+    }
+    next_btn.classList.add("show"); // Show the next button if user selected any option
 }
 
-// Function to show quiz result
 function showResult() {
-    quizBox.classList.remove("activeQuiz"); // Hide quiz box
-    resultBox.classList.add("activeResult"); // Display result box
-    const scoreText = resultBox.querySelector(".score_text");
-    if (score > 15) {
-        let scoreTag = '<span>and congrats! 🎉, You got <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
+    info_box.classList.remove("activeInfo"); // Hide info box
+    quiz_box.classList.remove("activeQuiz"); // Hide quiz box
+    result_box.classList.add("activeResult"); // Show result box
+    const scoreText = result_box.querySelector(".score_text");
+    if (userScore > 3) { // If user scored more than 3
+        // Creating a new span tag and passing the user score number and total question number
+        let scoreTag = '<span>and congrats! 🎉, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag; // Adding new span tag inside score_Text
+    }
+    else if (userScore > 1) { // If user scored more than 1
+        let scoreTag = '<span>and nice 😎, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
         scoreText.innerHTML = scoreTag;
-    } else if (score > 10) {
-        let scoreTag = '<span>and nice 😎, You got <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
-        scoreText.innerHTML = scoreTag;
-    } else {
-        let scoreTag = '<span>and sorry 😐, You got only <p>' + score + '</p> out of <p>' + questions.length + '</p></span>';
+    }
+    else { // If user scored less than 1
+        let scoreTag = '<span>and sorry 😐, You got only <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
         scoreText.innerHTML = scoreTag;
     }
 }
 
-// Function to start the timer
 function startTimer(time) {
     counter = setInterval(timer, 1000);
     function timer() {
-        timeValue--;
-        timeText.textContent = "Time Left: " + timeValue + "s";
-        if (timeValue <= 0) {
-            clearInterval(counter);
-            timeText.textContent = "Time's up!";
-            showResult();
+        timeCount.textContent = time; // Changing the value of timeCount with time value
+        time--; // Decrement the time value
+        if (time < 9) { // If timer is less than 9
+            let addZero = timeCount.textContent;
+            timeCount.textContent = "0" + addZero; // Add a 0 before time value
+        }
+        if (time < 0) { // If timer is less than 0
+            clearInterval(counter); // Clear counter
+            timeText.textContent = "Time Off"; // Change the time text to time off
+            const allOptions = option_list.children.length; // Getting all option items
+            let correcAns = questions[que_count].answer; // Getting correct answer from array
+            for (i = 0; i < allOptions; i++) {
+                if (option_list.children[i].textContent == correcAns) { // If there is an option which is matched to an array answer
+                    option_list.children[i].setAttribute("class", "option correct"); // Add green color to matched option
+                    option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); // Add tick icon to matched option
+                    console.log("Time Off: Auto selected correct answer.");
+                }
+            }
+            for (i = 0; i < allOptions; i++) {
+                option_list.children[i].classList.add("disabled"); // Once user select an option then disable all options
+            }
+            next_btn.classList.add("show"); // Show the next button if user selected any option
         }
     }
 }
 
-// Function to start timer line animation
 function startTimerLine(time) {
     counterLine = setInterval(timer, 29);
     function timer() {
-        time += 1;
-        timeline.style.width = time + "px";
-        if (time > 549) {
-            clearInterval(counterLine);
+        time += 1; // Upgrade time value with 1
+        time_line.style.width = time + "px"; // Increase width of time_line with px by time value
+        if (time > 549) { // If time value is greater than 549
+            clearInterval(counterLine); // Clear counterLine
         }
     }
 }
 
-// Function to update question counter
-function updateQuestionCounter(index) {
-    questionCounter.textContent = index + " / " + questions.length;
-}
-
-// Function to reset the quiz
-function resetQuiz() {
-    currentQuestion = 0;
-    currentQuestionNumber = 1;
-    timeValue = 30;
-    score = 0;
-    widthValue = 0;
-    showQuestions(currentQuestion);
-    updateQuestionCounter(currentQuestionNumber);
-    clearInterval(counter);
-    clearInterval(counterLine);
-    timeText.textContent = "Time Left: 30s";
-    timeline.style.width = "0px";
-}
-
-// Function to end the quiz
-function endQuiz() {
-    clearInterval(counter);
-    clearInterval(counterLine);
-    disableOptions();
-    showResult();
+function queCounter(index) {
+    // Creating a new span tag and passing the question number and total question
+    let totalQueCounTag = '<span><p>' + index + '</p> of <p>' + questions.length + '</p> Questions</span>';
+    bottom_ques_counter.innerHTML = totalQueCounTag; // Adding new span tag inside bottom_ques_counter
 }
 
