@@ -1,4 +1,4 @@
-/* Importing Google fonts */
+/* Import Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
@@ -9,14 +9,14 @@
 }
 
 body {
-    background-image: url("STEMonIT kiddie.jpg");
+    background-image: url("STEMonit kiddie jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 ::selection {
     color: #fff;
-    background-color: gold;
+    background-image: url("STEMonit kiddie jpg");
 }
 
 .start_btn,
@@ -42,18 +42,18 @@ body {
 .start_btn button {
     font-size: 25px;
     font-weight: 500;
-    color: white;
+    color: #2e0d1f;
     padding: 15px 30px;
     outline: none;
     border: none;
     border-radius: 5px;
-    background: gold;
+    background: #fff;
     cursor: pointer;
 }
 
 .info_box {
     width: 540px;
-    background: gold;
+    background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -71,7 +71,6 @@ body {
     border-radius: 5px 5px 0 0;
     font-size: 20px;
     font-weight: 600;
-    color: white;
 }
 
 .info_box .info-list {
@@ -81,12 +80,11 @@ body {
 .info_box .info-list .info {
     margin: 5px 0;
     font-size: 17px;
-    color: white;
 }
 
 .info_box .info-list .info span {
     font-weight: 600;
-    color: green;
+    color: #8a2f05;
 }
 
 .info_box .buttons {
@@ -110,13 +108,11 @@ body {
     border-radius: 5px;
     border: 1px solid #1a921a;
     transition: all 0.3s ease;
-    color: white;
-    background: gold;
 }
 
 .quiz_box {
     width: 550px;
-    background: gold;
+    background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -129,13 +125,12 @@ body {
     z-index: 2;
     height: 70px;
     padding: 0 30px;
-    background: gold;
+    background: #fff;
     border-radius: 5px 5px 0 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
-    color: white;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
 }
 
 .quiz_box header .title {
@@ -144,7 +139,7 @@ body {
 }
 
 .quiz_box header .timer {
-    color: black;
+    color: #000000;
     background: #b3ffb3;
     border: 1px solid #8231a1;
     height: 45px;
@@ -186,13 +181,12 @@ body {
 
 section {
     padding: 25px 30px 20px 30px;
-    background: gold;
+    background: #fff;
 }
 
 section .que_text {
     font-size: 25px;
     font-weight: 600;
-    color: green;
 }
 
 section .option_list {
@@ -212,7 +206,6 @@ section .option_list .option {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: white;
 }
 
 section .option_list .option:last-child {
@@ -220,7 +213,7 @@ section .option_list .option:last-child {
 }
 
 section .option_list .option:hover {
-    color: green;
+    color: #009900;
     background: #99ff99;
     border: 1px solid #008000;
 }
@@ -251,7 +244,6 @@ section .option_list .option .icon {
     pointer-events: none;
     transition: all 0.3s ease;
     line-height: 24px;
-    color: white;
 }
 
 .option_list .option .icon.tick {
@@ -273,8 +265,6 @@ footer {
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid lightgrey;
-    background: gold;
-    color: white;
 }
 
 footer .total_que span {
@@ -299,7 +289,7 @@ footer button {
     cursor: pointer;
     border: none;
     outline: none;
-    color: white;
+    color: #fff;
     border-radius: 5px;
     background: #00cc00;
     border: 1px solid #009933;
@@ -321,7 +311,7 @@ footer button.show {
 }
 
 .result_box {
-    background: gold;
+    background: #fff;
     border-radius: 5px;
     display: flex;
     padding: 25px 30px;
@@ -333,7 +323,6 @@ footer button.show {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
-    color: white;
 }
 
 .result_box .icon {
@@ -347,29 +336,53 @@ footer button.show {
     font-weight: 500;
 }
 
-.result_box .score_text {
-    margin: 5px 0 15px 0;
-    font-size: 17px;
+.result_box .score_text span {
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.result_box .score_text span p {
+    padding: 0 4px;
+    font-weight: 600;
 }
 
 .result_box .buttons {
     display: flex;
-    align-items: center;
+    margin: 20px 0;
 }
 
 .result_box .buttons button {
-    margin: 0 5px;
-    height: 40px;
-    width: 100px;
-    font-size: 16px;
+    margin: 0 10px;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     border: none;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #1a921a;
+    border: 1px solid #009933;
     transition: all 0.3s ease;
-    color: white;
-    background: #00cc00;
+}
+
+.buttons button.restart {
+    color: #fff;
+    background: #1aff66;
+}
+
+.buttons button.restart:hover {
+    background: #00b33c;
+}
+
+.buttons button.quit {
+    color: #1aff66;
+    background: #fff;
+}
+
+.buttons button.quit:hover {
+    color: #fff;
+    background: #00b33c;
 }
 
