@@ -1,4 +1,3 @@
-// Define the questions array
 let questions = [
     {
         numb: 1,
@@ -313,15 +312,22 @@ let questions = [
         question: "What is the process by which plants release water vapor into the atmosphere?",
         answer: "c) Transpiration",
         options: [
-{
-    numb: 30,
-    question: "What is the boiling point of water in Celsius?",
-    answer: "a) 100°C",
-    options: [
-        "a) 100°C",
-        "b) 0°C",
-        "c) -273°C",
-        "d) 50°C"
-    ]
-  },
+            "a) Photosynthesis",
+            "b) Respiration",
+            "c) Transpiration",
+            "d) Fermentation"
+        ]
+    },
+    {
+        numb: 30,
+        question: "What is the boiling point of water in Celsius?",
+        answer: "a) 100°C",
+        options: [
+            "a) 100°C",
+            "b) 0°C",
+            "c) -273°C",
+            "d) 50°C"
+        ]
+    }
 ];
+
