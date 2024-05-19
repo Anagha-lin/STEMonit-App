@@ -9,14 +9,14 @@
 }
 
 body {
-    background-image: url("STEMonit kiddie jpg");
+    background-image: url("STEMonIT kiddie.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 ::selection {
-    color: #fff;
-    background-image: url("STEMonit kiddie jpg");
+    color: gold;
+    background-image: url("STEMonIT kiddie.jpg");
 }
 
 .start_btn,
@@ -139,8 +139,8 @@ body {
 }
 
 .quiz_box header .timer {
-    color: #000000;
-    background: #b3ffb3;
+    color: white;
+    background: gold;
     border: 1px solid #8231a1;
     height: 45px;
     padding: 0 8px;
