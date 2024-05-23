@@ -42,7 +42,7 @@ body {
 .start_btn button {
     font-size: 25px;
     font-weight: 500;
-    color: #2e0d1f;
+    color: red;
     padding: 15px 30px;
     outline: none;
     border: none;
@@ -53,7 +53,7 @@ body {
 
 .info_box {
     width: 540px;
-    background: #fff;
+    background:gold;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -162,11 +162,11 @@ body {
     font-weight: 500;
     height: 30px;
     width: 45px;
-    color: #fff;
+    color: white;
     border-radius: 5px;
     line-height: 30px;
     text-align: center;
-    background: #80ffcc;
+    background: blue;
     border: 1px solid #00ff99;
     user-select: none;
 }
@@ -195,7 +195,7 @@ section .option_list {
 }
 
 section .option_list .option {
-    background: #00e68a;
+    background: gold;
     border: 1px solid #00ff99;
     border-radius: 5px;
     padding: 8px 15px;
@@ -214,7 +214,7 @@ section .option_list .option:last-child {
 
 section .option_list .option:hover {
     color: #009900;
-    background: #99ff99;
+    background: gold;
     border: 1px solid #008000;
 }
 
@@ -378,7 +378,7 @@ footer button.show {
 
 .buttons button.quit {
     color: #1aff66;
-    background: #fff;
+    background: gold;
 }
 
 .buttons button.quit:hover {
