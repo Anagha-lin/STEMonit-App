@@ -1,4 +1,3 @@
-Sure, I can adjust the proposal and MVP specification to reflect that the entire application will be built using Java for the logic and HTML/CSS for the interface, with no backend or cloud services involved.
 
 ## STEMonIT-App
 
