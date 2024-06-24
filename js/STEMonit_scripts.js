@@ -18,7 +18,7 @@ let timeValue = 30;
 let userScore = 0;
 let widthValue = 0;
 
-// When the start button is clicked
+// When start button is clicked
 start_btn.onclick = () => {
     info_box.classList.add("activeInfo"); // Display the info box
 }

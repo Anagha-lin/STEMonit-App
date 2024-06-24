@@ -6,7 +6,7 @@ let questions = [
         options: [
             "a) Gravity",
             "b) Electromagnetism",
-            "c) Strong nuclear force",
+            "c) Nuclear force",
             "d) Chemical force"
         ]
     },
