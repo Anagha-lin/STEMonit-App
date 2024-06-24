@@ -139,7 +139,7 @@ body {
 }
 
 .quiz_box header .timer {
-    color: white;
+    color: blue;
     background: gold;
     border: 1px solid #8231a1;
     height: 45px;
