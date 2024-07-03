@@ -1,5 +1,7 @@
+![home page](https://github.com/Anagha-lin/STEMonit-App/assets/135278326/c48f5bd9-f635-44ab-bf1c-2fa04e265b2f)
 
-## STEMonIT-App
+## STEMonIT-App![quiz page](https://github.com/Anagha-lin/STEMonit-App/assets/135278326/133cb6f2-35f3-40db-ad57-de2d2e3a28b0)
+
 
 The STEMonIT project is an application designed for young students to examine their knowledge of STEM subjects.
 
