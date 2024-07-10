@@ -138,5 +138,6 @@ The deployment strategy for STEMonIT involves serving static files directly. Thi
 1. Frontend Deployment:
     - The frontend application will be built and packaged into static files (HTML, CSS, JavaScript).
     - These static files will be served directly by a web server, such as Nginx or Apache, ensuring fast and reliable delivery to users.
-Conclusion
+ 
+**Conclusion
 STEMonIT is a dedicated effort to improve STEM education through engaging and interactive quizzes. By providing a user-friendly platform tailored to the needs of students and educators, STEMonIT aims to make STEM learning fun and accessible. Through continuous improvement and future iterations, STEMonIT will strive to meet the evolving educational needs and inspire the next generation of STEM enthusiasts.
