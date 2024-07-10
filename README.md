@@ -34,9 +34,11 @@ Contributions are welcome! Please fork the repository and create a pull request 
 5. Open a Pull Request
 Licensing
 This project is licensed under the MIT License. 
-Context and Story
-STEMonIT was inspired by the need to make STEM education more engaging and accessible to students, particularly in regions where traditional teaching methods might not fully capture students' interest. The interactive quiz format aims to transform learning into a more dynamic and enjoyable experience, encouraging students to explore and excel in STEM subjects.
-Technical Challenges
+
+**Context and Story
+**STEMonIT was inspired by the need to make STEM education more engaging and accessible to students, particularly in regions where traditional teaching methods might not fully capture students' interest. The interactive quiz format aims to transform learning into a more dynamic and enjoyable experience, encouraging students to explore and excel in STEM subjects.
+
+**Technical Challenges
 One of the significant challenges faced during the development of STEMonIT was ensuring a seamless and responsive user interface. Balancing the complexity of quiz logic with an intuitive user experience required careful consideration and iterative testing. Additionally, naming variables appropriately and refactoring functions to enhance code readability and maintainability were crucial steps in the development process.
  Future Iterations
 For future iterations, the following enhancements are envisioned:
@@ -91,6 +93,7 @@ While existing solutions offer similar functionality, STEMonIT is developed from
  STEMonIT MVP Specification
  1.0 Architecture
 The architecture of the STEMonIT platform is designed to facilitate seamless interaction between users and quizzes using only Java, HTML, and CSS.
+![alx linkedin blog ](https://github.com/Anagha-lin/STEMonit-App/assets/135278326/6d400a5f-54b1-40c9-8fc5-902a6a1eccda)
  
  1.1 Components
 Client Side (Frontend):
